@@ -1,0 +1,28 @@
+
+vector<int> LeftRotate(vector<int>a,int s,int b)
+{
+    vector<int>result;
+    
+    for(int i=b;i<b+s;i++)
+    {
+        result.push_back(a[i%s]);
+    }
+    return result;
+}
+
+
+
+
+vector<vector<int> > Solution::solve(vector<int> &A, vector<int> &B) {
+    
+    vector<vector<int>>ans;
+    
+    for(int i=0;i<B.size();i++)
+    {
+        ans.push_back(LeftRotate(A,A.size(),B[i]));
+    }
+    
+    
+    return ans;
+    
+}
