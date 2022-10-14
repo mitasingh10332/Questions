@@ -1,0 +1,37 @@
+int Solution::perfectPeak(vector<int> &A) {
+    
+   int ans;
+    for (int i=1;i<A.size()-1;i++)
+    {  ans=0;
+        for(int j=0;j<i;j++)
+        {
+            if (A[j]>=A[i])
+            {
+                ans++;
+                break;
+            }
+        }
+        
+        if(ans==0){
+        for(int j=i+1;j<A.size();j++)
+        {
+            if (A[j]<=A[i])
+            {
+                ans++;
+                break;
+            }
+        } }
+       
+        if(ans==0)
+        {break;}
+    
+        
+        
+    }
+    
+     if(ans==0)
+        {return true;
+        }
+        
+    else 
+    return false;
