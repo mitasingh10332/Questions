@@ -1,0 +1,17 @@
+vector<int> Solution::findOccurences(vector<int> &A) {
+    
+    map<int, int> mp;
+    for(auto x : A){
+        mp[x]++;
+    }
+    vector<int> ans;
+    for(auto x : mp){
+        ans.push_back(x.second);
+    }
+    return ans;
+    
+    
+}
+
+
+
