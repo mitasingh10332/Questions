@@ -1,0 +1,20 @@
+bool check(vector<int>v , int x, int y)
+{
+    for (auto i:v)
+    {
+        if( i==y || i-x==y || i+x==y) {continue;}
+        else {return false;}
+    }
+    return true;
+}
+
+
+
+int Solution::solve(vector<int> &A, int B) {
+    int n=A.size() ,x=B;
+    if (check(A,x,A[0]) || check(A,x,A[0]-B)||check(A,x,A[0]+B))
+    {
+        return 1;
+    }
+    else return 0;
+}
