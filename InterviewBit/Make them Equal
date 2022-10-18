@@ -1,0 +1,25 @@
+int Solution::solve(vector<int> &A) {
+    int n=A.size();
+    map<int,int>f;
+    for(auto i:A){
+        int b=i;
+        while(b){
+            f[b]++;
+            b/=2;
+        }
+    }
+    int opt=1;
+    for(auto i:f){
+        if(i.second==n)
+            opt=i.first; break;
+    }
+    int ans=0;
+    for(auto i:A){
+        int b=i;
+        while(b!=opt){
+            ans++;
+            b/=2;
+        }
+    }
+    return ans;
+}
