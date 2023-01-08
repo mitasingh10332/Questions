@@ -1,7 +1,4 @@
 
-@anchalmehandiratta8497
-1 year ago
-Corrected last code(spiral traversal)
 
 #include<iostream>
 using namespace std;
