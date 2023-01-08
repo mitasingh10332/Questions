@@ -1,60 +1,59 @@
+
+@anchalmehandiratta8497
+1 year ago
+Corrected last code(spiral traversal)
+
 #include<iostream>
-#include<bits/stdc++.h>
 using namespace std;
-
-
 int main()
-{ //spiral order print of array
-
+{
     int n,m;
     cin>>n>>m;
-    int ar[n][m];
-
+    int a[n][m];
     for(int i=0;i<n;i++)
     {
-        for (int j=0 ; j<m; j++)
+        for(int j=0;j<m;j++)
         {
-            cin>>ar[i][j];
+            cin>>a[i][j];
         }
-        cout<<"\n";
     }
-
-
-    //for spiral order
-
-    int row_start=0, row_end=n-1, column_start=0, column_end=m-1;
-
-    while (row_start<=row_end && column_start <= column_end){
-
-    //row_start
-    for(int col= column_start ; col<=column_end; col++ )
+    
+    int row_start=0,col_start=0,row_end=n-1,col_end=m-1;
+    
+    while(row_start<=row_end && col_start<=col_end)
     {
-        cout<<ar[row_start][col]<<" ";
-    }
-    row_start++;
+        for(int col=col_start;col<=col_end;col++)
+        {
+            cout<<a[row_start][col]<<"  ";
+        }
+        row_start++;
 
-    //column_end
-    for(int row=row_start; row <=row_end ;row++)
+        for(int row=row_start;row<=row_end;row++)
+        {
+            cout<<a[row][col_end]<<"  ";
+        }
+        col_end--;
+        
+     if(row_start<=row_end)
     {
-        cout<<ar[row][column_end]<<" ";
+    
+        for(int col=col_end;col>=col_start;col--)
+        {
+            cout<<a[row_end][col]<<"  ";
+        }
     }
-    column_end--;
+        row_end--;
 
-    //row_end
-    for(int col=column_end ; col>=column_start; col--)
+  if(col_start<=col_end)
     {
-        cout <<ar[row_end][col]<<" ";
-    }
-    row_end--;
 
-    //column start
-    for(int row=row_end; row>=row_start;row--)
-    {
-        cout<< ar[row][column_start]<<" ";
+        for(int row=row_end;row>=row_start;row--)
+        {
+            cout<<a[row][col_start]<<"  ";
+        }
     }
-    column_start++;
-
-
-    }
- return 0;
+        
+        col_start++;
+    }  
+return 0;
 }
