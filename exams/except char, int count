@@ -1,0 +1,11 @@
+int countMisses(const string& input) {
+    int missCount = 0;
+
+    for (char c : input) {
+        if (!isalnum(c) && c != ' ') {
+            missCount++;
+        }
+    }
+
+    return missCount;
+}
